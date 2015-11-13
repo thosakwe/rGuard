@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace rGuard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

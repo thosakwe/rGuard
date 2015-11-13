@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace rGuard\Events;
 
 abstract class Event
 {

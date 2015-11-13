@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace rGuard\Jobs;
 
 use Illuminate\Bus\Queueable;
 
