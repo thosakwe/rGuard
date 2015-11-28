@@ -11,6 +11,8 @@ complete admin panel.
 3. php artisan key:generate
 4. php artisan vendor:publish
 5. Configure .env (ENABLE_HTTPS, DATABASE_*, MAIL_*)
-6. Create an admin user as described [here](http://sleeping-owl.github.io/en/Commands/Administrators.html). Default is admin / SleepingOwl.
-7. cd public
-8. bower install
+6. php artisan cashier:table
+7. php artisan migrate
+8. Create an admin user as described [here](http://sleeping-owl.github.io/en/Commands/Administrators.html). Default is admin / SleepingOwl.
+9. cd public
+10. bower install

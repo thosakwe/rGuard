@@ -151,6 +151,10 @@ return [
         SleepingOwl\Admin\AdminServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
+
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -201,6 +205,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Image' => Intervention\Image\Facades\Image::class,
+
         'Admin' => SleepingOwl\Admin\Admin::class,
         'AdminAuth' => SleepingOwl\AdminAuth\Facades\AdminAuth::class,
         'AdminRouter' => SleepingOwl\Admin\Facades\AdminRouter::class,
@@ -211,6 +217,8 @@ return [
 
         'Form' => Illuminate\Html\FormFacade::class,
         'Html' => Illuminate\Html\HtmlFacade::class,
+
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

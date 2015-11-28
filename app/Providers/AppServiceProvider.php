@@ -3,6 +3,7 @@
 namespace rGuard\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use rGuard\User;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+        \Stripe\Stripe::setApiVersion("2015-10-16");
+
+        User::created(function(User $user) {
+            $user->sendConfirmationEmail();
+        });
     }
 
     /**

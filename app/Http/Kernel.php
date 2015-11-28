@@ -3,6 +3,8 @@
 namespace rGuard\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use rGuard\Http\Middleware\UserIdentity;
+use rGuard\Http\Middleware\UserIsConfirmed;
 
 class Kernel extends HttpKernel
 {
@@ -30,5 +32,7 @@ class Kernel extends HttpKernel
         'auth' => \rGuard\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \rGuard\Http\Middleware\RedirectIfAuthenticated::class,
+        'user.confirmed' => UserIsConfirmed::class,
+        'user.identity' => UserIdentity::class
     ];
 }

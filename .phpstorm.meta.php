@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-11-13.
+    * Generated on 2015-11-26.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -45,6 +45,10 @@ namespace PHPSTORM_META {
             'SleepingOwl\Admin\Admin' instanceof \SleepingOwl\Admin\Admin,
             'admin' instanceof \SleepingOwl\Admin\Admin,
             'admin.router' instanceof \SleepingOwl\Admin\Router,
+            'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
+            'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -165,6 +169,10 @@ namespace PHPSTORM_META {
             'SleepingOwl\Admin\Admin' instanceof \SleepingOwl\Admin\Admin,
             'admin' instanceof \SleepingOwl\Admin\Admin,
             'admin.router' instanceof \SleepingOwl\Admin\Router,
+            'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
+            'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -285,6 +293,10 @@ namespace PHPSTORM_META {
             'SleepingOwl\Admin\Admin' instanceof \SleepingOwl\Admin\Admin,
             'admin' instanceof \SleepingOwl\Admin\Admin,
             'admin.router' instanceof \SleepingOwl\Admin\Router,
+            'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
+            'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -405,6 +417,10 @@ namespace PHPSTORM_META {
             'SleepingOwl\Admin\Admin' instanceof \SleepingOwl\Admin\Admin,
             'admin' instanceof \SleepingOwl\Admin\Admin,
             'admin.router' instanceof \SleepingOwl\Admin\Router,
+            'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
+            'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
+            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
+            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,

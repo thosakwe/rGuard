@@ -1,5 +1,8 @@
 <?php
 
+use rGuard\BlurTemplate;
+use rGuard\LogoTemplate;
+
 return array(
 
     /*
@@ -16,7 +19,7 @@ return array(
     |
     */
    
-    'route' => null,
+    'route' => "img/cache",
 
     /*
     |--------------------------------------------------------------------------
@@ -52,6 +55,8 @@ return array(
     */
    
     'templates' => array(
+        '128' => LogoTemplate::class,
+        'blur' => BlurTemplate::class,
         'small' => 'Intervention\Image\Templates\Small',
         'medium' => 'Intervention\Image\Templates\Medium',
         'large' => 'Intervention\Image\Templates\Large',

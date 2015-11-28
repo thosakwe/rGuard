@@ -15,7 +15,7 @@ class ForceHTTPS
      */
     public function handle($request, Closure $next)
     {
-        if (!$request->secure() && env('ENABLE_HTTPS')) {
+        if (!$request->secure() && config('rguard.https')) {
             return redirect()->secure($request->getRequestUri());
         }
         return $next($request);
