@@ -1,3 +1,4 @@
+.idea
 /vendor
 /node_modules
 /.vagrant
@@ -7,3 +8,6 @@ Homestead.json
 Vagrantfile
 public/files
 public/images
+bower_components
+_ide*.php
+.phpstorm.meta.php

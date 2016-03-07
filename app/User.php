@@ -49,6 +49,18 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
      */
     protected $dates = ['trial_ends_at', 'subscription_ends_at'];
 
+    public static function getList()
+    {
+        $users = User::all();
+        $keys = $users->map(function(User $user) {
+            return $user->id;
+        })->all();
+        $values = $users->map(function(User $user) {
+            return $user->name;
+        })->all();
+        return array_combine($keys, $values);
+    }
+
     /**
      * Returns the path to an action, passing this user as a parameter.
      * @param $action string The action to route to.
@@ -60,6 +72,21 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
         return action($action, array_merge(['user' => $this], $data));
     }
 
+    public function isLicensedForApp(App $app)
+    {
+        return \rGuard\License::whereAppId($app->id)->whereUserId($this->id)->get()->count() > 0;
+    }
+
+    public function licenseForApp(App $app)
+    {
+        return \rGuard\License::whereAppId($app->id)->whereUserId($this->id)->first();
+    }
+
+    public function licenses()
+    {
+        return $this->hasMany(License::class);
+    }
+
     /**
      * Redirects to an action, passing this user as a parameter.
      * @param $action string The action to route to.
@@ -68,7 +95,7 @@ class User extends SleepingOwlModel implements AuthenticatableContract,
      */
     public function redirectToAction($action, $data = [])
     {
-        return redirect()->route($action, array_merge(['user' => $this], $data));
+        return redirect()->action($action, array_merge(['user' => $this], $data));
     }
 
     /**

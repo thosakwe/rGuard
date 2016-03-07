@@ -3,8 +3,10 @@
 namespace rGuard\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use rGuard\Http\Middleware\NotLicensed;
 use rGuard\Http\Middleware\UserIdentity;
 use rGuard\Http\Middleware\UserIsConfirmed;
+use rGuard\Http\Middleware\UserOwnsLicense;
 
 class Kernel extends HttpKernel
 {
@@ -32,6 +34,8 @@ class Kernel extends HttpKernel
         'auth' => \rGuard\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \rGuard\Http\Middleware\RedirectIfAuthenticated::class,
+        'license.owner' => UserOwnsLicense::class,
+        'not_licensed' => NotLicensed::class,
         'user.confirmed' => UserIsConfirmed::class,
         'user.identity' => UserIdentity::class
     ];

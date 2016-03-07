@@ -13,10 +13,11 @@
         "filp/whoops": "^1.1",
         "sleeping-owl/admin": "^2.0",
         "intervention/imagecache": "^2.3",
-        "paypal/rest-api-sdk-php" : "0.5.*",
         "stripe/stripe-php": "^3.4",
         "guzzlehttp/guzzle": "^6.1",
-        "laravel/cashier": "^5.0"
+        "laravel/cashier": "^5.0",
+        "paypal/rest-api-sdk-php": "^1.6",
+        "vlucas/phpdotenv": "1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

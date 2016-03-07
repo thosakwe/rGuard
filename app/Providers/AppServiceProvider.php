@@ -3,6 +3,7 @@
 namespace rGuard\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use rGuard\License;
 use rGuard\User;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
 
         User::created(function(User $user) {
             $user->sendConfirmationEmail();
+        });
+
+        License::updating(function(License $license) {
+           $license->code = strtoupper($license->code); //Force uppercase
         });
     }
 

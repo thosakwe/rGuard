@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2be3726776997f41b926d1ded65166e5",
-    "content-hash": "6a2ab5df377b44bc6ca9dc1096bc7c22",
+    "hash": "b130f06f23e188100c6b3acaf2ea6679",
+    "content-hash": "f1ca345121249c437a3665be99614deb",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1750,22 +1750,21 @@
         },
         {
             "name": "paypal/rest-api-sdk-php",
-            "version": "V0.5.0",
+            "version": "v1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
-                "reference": "9e09f7bff507e81cbb03d233c15c080fefd1d512"
+                "reference": "0993a6450e7ad7bd4bd7b4f7409784b6ff86873d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/9e09f7bff507e81cbb03d233c15c080fefd1d512",
-                "reference": "9e09f7bff507e81cbb03d233c15c080fefd1d512",
+                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/0993a6450e7ad7bd4bd7b4f7409784b6ff86873d",
+                "reference": "0993a6450e7ad7bd4bd7b4f7409784b6ff86873d",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
-                "paypal/sdk-core-php": "1.2.*",
                 "php": ">=5.3.0"
             },
             "require-dev": {
@@ -1788,57 +1787,14 @@
                 }
             ],
             "description": "PayPal's PHP SDK for REST APIs",
-            "homepage": "https://github.com/paypal/rest-api-sdk-php",
+            "homepage": "http://paypal.github.io/PayPal-PHP-SDK/",
             "keywords": [
                 "payments",
                 "paypal",
                 "rest",
                 "sdk"
             ],
-            "time": "2013-03-08 02:11:59"
-        },
-        {
-            "name": "paypal/sdk-core-php",
-            "version": "V1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paypal/sdk-core-php.git",
-                "reference": "06588e5017a6c983168a3bd8e7093d7068974cd0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paypal/sdk-core-php/zipball/06588e5017a6c983168a3bd8e7093d7068974cd0",
-                "reference": "06588e5017a6c983168a3bd8e7093d7068974cd0",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "lib"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache2"
-            ],
-            "authors": [
-                {
-                    "name": "PayPal",
-                    "homepage": "https://github.com/paypal/sdk-core-php/contributors"
-                }
-            ],
-            "description": "PayPal Core SDK for PHP",
-            "homepage": "https://github.com/paypal/sdk-core-php",
-            "keywords": [
-                "paypal",
-                "php",
-                "sdk"
-            ],
-            "time": "2013-03-06 13:21:44"
+            "time": "2015-12-07 21:31:49"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -2989,23 +2945,20 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v1.1.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa"
+                "reference": "f64f14291cb7d0f2085b9aa5a9333f514a8ec387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa",
-                "reference": "0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/f64f14291cb7d0f2085b9aa5a9333f514a8ec387",
+                "reference": "f64f14291cb7d0f2085b9aa5a9333f514a8ec387",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
             "autoload": {
@@ -3021,17 +2974,17 @@
                 {
                     "name": "Vance Lucas",
                     "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
+                    "homepage": "http://www.vancelucas.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "description": "Loads environment variables from a .env file",
             "homepage": "http://github.com/vlucas/phpdotenv",
             "keywords": [
-                "dotenv",
                 "env",
                 "environment"
             ],
-            "time": "2015-05-30 15:59:26"
+            "time": "2013-01-23 06:55:23"
         }
     ],
     "packages-dev": [
@@ -3401,6 +3354,49 @@
                 "testing"
             ],
             "time": "2015-04-02 19:54:00"
+        },
+        {
+            "name": "paypal/sdk-core-php",
+            "version": "V1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paypal/sdk-core-php.git",
+                "reference": "06588e5017a6c983168a3bd8e7093d7068974cd0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paypal/sdk-core-php/zipball/06588e5017a6c983168a3bd8e7093d7068974cd0",
+                "reference": "06588e5017a6c983168a3bd8e7093d7068974cd0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "PayPal",
+                    "homepage": "https://github.com/paypal/sdk-core-php/contributors"
+                }
+            ],
+            "description": "PayPal Core SDK for PHP",
+            "homepage": "https://github.com/paypal/sdk-core-php",
+            "keywords": [
+                "paypal",
+                "php",
+                "sdk"
+            ],
+            "time": "2013-03-06 13:21:44"
         },
         {
             "name": "phpspec/php-diff",

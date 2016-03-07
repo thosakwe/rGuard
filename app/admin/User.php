@@ -6,11 +6,11 @@
  */
 
 // Create admin model from User class with title and url alias
-use SleepingOwl\Admin\Admin;
-use SleepingOwl\Admin\Columns\Column;
-use SleepingOwl\Admin\Models\Form\FormItem;
-
-Admin::model(\rGuard\User::class)->title('Users')->as('users')->columns(function ()
+Admin::model('\User')->title('Users')->as('users-alias-name')->denyCreating()->denyEditingAndDeleting(function ($instance)
+{
+	// deny editing and deleting rows when this is true
+	return ($instance->id <= 2) || ($instance->email == 'admin');
+})->columns(function ()
 {
 	// Describing columns for table view
 	Column::string('name', 'Name');
@@ -18,6 +18,6 @@ Admin::model(\rGuard\User::class)->title('Users')->as('users')->columns(function
 })->form(function ()
 {
 	// Describing elements in create and editing forms
-	FormItem::text('name', 'Name');
-	FormItem::text('email', 'Email');
+	FormItem::text('name', 'Name')->required();
+	FormItem::text('email', 'Email')->required();
 });

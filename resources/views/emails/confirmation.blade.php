@@ -9,7 +9,7 @@ $url = route('confirm', ['confirmation_code' => $user->confirmation_code]);
 <p>
     Hi, {{ $user->name }}. Thanks for choosing {{ config('rguard.title', 'our site') }}.
     To confirm your account, simply click the following link:
-    <a href="{{ $url }}">{{ $url }}</a>
+    <a href="{{ $url }}">{{ $url }}</a>.
 
     We hope to see you soon!
 </p>

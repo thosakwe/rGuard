@@ -154,7 +154,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Laravel\Cashier\CashierServiceProvider::class,
 
-        Barryvdh\Debugbar\ServiceProvider::class,
+        //Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 

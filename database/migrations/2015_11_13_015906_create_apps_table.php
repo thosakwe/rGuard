@@ -21,6 +21,7 @@ class CreateAppsTable extends Migration
             $table->boolean('featured')->default(false);
             $table->decimal('price')->default(0.00);
             $table->string('image')->nullable();
+            $table->string('file');
             $table->timestamps();
         });
     }

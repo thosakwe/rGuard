@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2015-11-26.
+    * Generated on 2015-12-24.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -47,8 +47,6 @@ namespace PHPSTORM_META {
             'admin.router' instanceof \SleepingOwl\Admin\Router,
             'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
             'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
-            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
-            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -125,8 +123,6 @@ namespace PHPSTORM_META {
             'command.queue.subscribe' instanceof \Illuminate\Queue\Console\SubscribeCommand,
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
-            'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
             'html' instanceof \Illuminate\Html\HtmlBuilder,
             'form' instanceof \Illuminate\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -171,8 +167,6 @@ namespace PHPSTORM_META {
             'admin.router' instanceof \SleepingOwl\Admin\Router,
             'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
             'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
-            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
-            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -249,8 +243,6 @@ namespace PHPSTORM_META {
             'command.queue.subscribe' instanceof \Illuminate\Queue\Console\SubscribeCommand,
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
-            'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
             'html' instanceof \Illuminate\Html\HtmlBuilder,
             'form' instanceof \Illuminate\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -295,8 +287,6 @@ namespace PHPSTORM_META {
             'admin.router' instanceof \SleepingOwl\Admin\Router,
             'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
             'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
-            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
-            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -373,8 +363,6 @@ namespace PHPSTORM_META {
             'command.queue.subscribe' instanceof \Illuminate\Queue\Console\SubscribeCommand,
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
-            'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
             'html' instanceof \Illuminate\Html\HtmlBuilder,
             'form' instanceof \Illuminate\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,
@@ -419,8 +407,6 @@ namespace PHPSTORM_META {
             'admin.router' instanceof \SleepingOwl\Admin\Router,
             'Laravel\Cashier\BillableRepositoryInterface' instanceof \Laravel\Cashier\EloquentBillableRepository,
             'command.cashier.table' instanceof \Laravel\Cashier\CashierTableCommand,
-            'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
-            'command.debugbar.clear' instanceof \Barryvdh\Debugbar\Console\ClearCommand,
             'blade.compiler' instanceof \Illuminate\View\Compilers\BladeCompiler,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
@@ -497,8 +483,6 @@ namespace PHPSTORM_META {
             'command.queue.subscribe' instanceof \Illuminate\Queue\Console\SubscribeCommand,
             'queue.failer' instanceof \Illuminate\Queue\Failed\DatabaseFailedJobProvider,
             'IlluminateQueueClosure' instanceof \IlluminateQueueClosure,
-            'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'auth.password.tokens' instanceof \Illuminate\Auth\Passwords\DatabaseTokenRepository,
             'html' instanceof \Illuminate\Html\HtmlBuilder,
             'form' instanceof \Illuminate\Html\FormBuilder,
             'command.ide-helper.generate' instanceof \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand,

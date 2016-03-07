@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html ng-app="rguard" ng-controller="MainCtrl as main">
 <head>
-    <title>
-        @yield('title', 'Untitled') - {{ config('rguard.title') }}
-    </title>
+    @section('title_section')
+        <title>
+            @yield('title', 'Untitled') - {{ config('rguard.title') }}
+        </title>
+    @show
     @yield('styles')
     {!! Html::style('bower_components/semantic/dist/semantic.min.css') !!}
     {!! Html::style('css/master.css') !!}
@@ -16,6 +18,13 @@
         {{ config('rguard.title') }}
     </a>
 
+    @if(config('rguard.use_wordpress'))
+        <a class="item" href="{{ url('/blog') }}">
+            <i class="wordpress icon"></i>
+            Blog
+        </a>
+    @endif
+
     <div class="ui search item">
         <div class="ui inverted transparent icon input">
             <input class="prompt" id="productSearch" type="text" placeholder="Search products...">
@@ -23,13 +32,14 @@
         </div>
         <div class="results"></div>
     </div>
-    @if(Auth::check())
-    @else
-        <div class="item">
-            <i class="user icon"></i>
-            My Account
-        </div>
-    @endif
+    @foreach(\rGuard\Page::all() as $page)
+        @if($page->show_in_navbar)
+            <a class="item" href="{{ route('page.show', ['page' => $page]) }}">
+                {{ $page->title }}
+            </a>
+        @endif
+    @endforeach
+    {!! view('user_menu_small') !!}
 </div>
 <div class="pusher">
     <div class="ui grid">
@@ -53,6 +63,19 @@
                     <a class="header item menu0" href="{{ url('/') }}">
                         {{ config('rguard.title', 'rGuard') }}
                     </a>
+                    @if(config('rguard.use_wordpress'))
+                        <a class="item" href="{{ url('/blog') }}">
+                            <i class="wordpress icon"></i>
+                            Blog
+                        </a>
+                    @endif
+                    @foreach(\rGuard\Page::all() as $page)
+                        @if($page->show_in_navbar)
+                            <a class="item" href="{{ route('page.show', ['page' => $page]) }}">
+                                {{ $page->title }}
+                            </a>
+                        @endif
+                    @endforeach
 
                     <div class="right menu">
                         <div class="ui search item">
@@ -63,39 +86,7 @@
                             <div class="results"></div>
                         </div>
                     </div>
-                    @if(Auth::check())
-                        <div class="ui dropdown item">
-                            <i class="user icon"></i>
-                            {{ Auth::user()->name }}
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                @unless(Auth::user()->confirmed)
-                                    <a class="item" href="{{ Auth::user()->route('resend_confirmation_email') }}">
-                                        <i class="loading repeat icon"></i>
-                                        Resend Confirmation E-mail
-                                    </a>
-                                <div class="ui divider"></div>
-                                @endunless
-                                <a class="item" href="{{ Auth::user()->route('logout').'?csrf_token='.csrf_token() }}">
-                                    <i class="log out icon"></i>
-                                    Log out
-                                </a>
-                            </div>
-                        </div>
-                    @else
-                        <div class="item">
-                            <a class="ui basic inverted white button" href="{{ action('Auth\AuthController@getLogin') }}">
-                                <i class="user icon"></i>
-                                Log in
-                            </a>
-                        </div>
-                        <div class="item">
-                            <a class="ui basic inverted white button" href="{{ action('Auth\AuthController@getRegister') }}">
-                                <i class="user add icon"></i>
-                                Register
-                            </a>
-                        </div>
-                    @endif
+                    {!! view('user_menu') !!}
                 </div>
             </div>
         </div>
@@ -121,10 +112,34 @@
     <br/><br/><br/><br/>
 
     <div class="ui bottom fixed borderless menu" id="footer">
+        @if(config('rguard.https'))
+            <div class="item">
+                <div class="ui green label">
+                    <i class="lock icon"></i>
+                    SECURE
+                </div>
+            </div>
+        @endif
         <div class="header item">
             &copy; {{ config('rguard.title', 'rGuard') }} {{ date('Y') }}
         </div>
         <div class="right menu">
+            <div class="item">
+                <i class="stripe icon"></i>
+            </div>
+            <div class="item">
+                <i class="paypal card icon"></i>
+            </div>
+            @if(config('rguard.accept_bitcoin'))
+                <div class="item">
+                    <i class="bitcoin icon"></i>
+                </div>
+            @endif
+            @if(config('rguard.accept_alipay'))
+                <div class="item">
+                    <i class="yen icon"></i>
+                </div>
+            @endif
             <div class="item">
                 <a class="ui {{ config('rguard.color') }} link label" href="https://github.com/regiostech/rguard">
                     Built with rGuard

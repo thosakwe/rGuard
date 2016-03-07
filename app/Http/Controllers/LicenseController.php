@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use rGuard\Http\Requests;
 use rGuard\Http\Controllers\Controller;
+use rGuard\License;
 
 class LicenseController extends Controller
 {
@@ -29,10 +30,15 @@ class LicenseController extends Controller
         //
     }
 
+    public function generateCode()
+    {
+        return ['code' => License::generateCode()];
+    }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,18 +49,21 @@ class LicenseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param License $license
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function show($id)
+    public function show(License $license)
     {
-        //
+        if (\Auth::check())
+            return \Auth::user()->redirectToAction('LicensePanelController@getIndex');
+        else return redirect()->route('index')->with("error", "Something went wrong there.");
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -65,8 +74,8 @@ class LicenseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,7 +86,7 @@ class LicenseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

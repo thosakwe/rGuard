@@ -20,7 +20,7 @@ class StripeController extends Controller
     public function postIndex()
     {
         $app = App::find(\Input::get('app'));
-        if ($app == null) return \Response::json(['error' => 'invalid_app_id'], 404);
+        if ($app == null || \Auth::user()->isLicensedForApp($app)) return \Response::json(['error' => 'invalid_app_id'], 404);
         // Get the credit card details submitted by the form
         $token = $_POST['stripeToken'];
 
@@ -33,22 +33,7 @@ class StripeController extends Controller
         if ($result === false) {
             return redirect()->back()->with('error', "Could not charge your card.");
         } else {
-            $license = License::create([
-                'app_id' => $app->id,
-                'code' => License::generateCode(),
-                'user_id' => \Auth::user()->id,
-                'licensed_to' => \Auth::user()->name
-            ]);
-            if ($app->days_to_expire > 0) {
-                $license->expires = Carbon::now()->addDays($app->days_to_expire)->toDateString();
-            }
-            if ($license->save()) {
-                return redirect()
-                    ->action('LicenseController@show', ['license' => $license])
-                    ->with('success', "Successfully purchased $app->name.");
-            } else {
-                return redirect()->back()->with('error', 'Could not license application to you. Please try again later.');
-            }
+            return License::make($app);
         }
         /*
         try {
