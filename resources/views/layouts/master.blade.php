@@ -44,8 +44,8 @@
 <div class="pusher">
     <div class="ui grid">
         <div class="mobile only row">
-            <div class="ui borderless fluid inverted {{ config('rguard.color') }} secondary menu"
-                 style="border-radius: 0;">
+            <div class="ui borderless fluid large inverted {{ config('rguard.color') }} secondary menu"
+                 style="border-radius: 0; box-shadow: 0 1px 2px 2px rgba(34, 36, 38, .15) !important; margin: 0 0 2em;">
                 <div class="ui container">
                     <div class="item" id="sidebarItem">
                         &nbsp;&nbsp;&nbsp;
@@ -58,7 +58,8 @@
             </div>
         </div>
         <div class="tablet computer only row">
-            <div class="ui fluid inverted {{ config('rguard.color') }} secondary menu" style="border-radius: 0;">
+            <div class="ui fluid inverted large {{ config('rguard.color') }} secondary menu"
+                 style="border-radius: 0; box-shadow: 0 1px 2px 2px rgba(34, 36, 38, .15) !important; margin: 0 0 2em;">
                 <div class="ui container">
                     <a class="header item menu0" href="{{ url('/') }}">
                         {{ config('rguard.title', 'rGuard') }}
@@ -111,39 +112,60 @@
     </div>
     <br/><br/><br/><br/>
 
-    <div class="ui bottom fixed borderless menu" id="footer">
-        @if(config('rguard.https'))
-            <div class="item">
-                <div class="ui green label">
-                    <i class="lock icon"></i>
-                    SECURE
+    <div class="ui grid">
+        <div class="mobile only row">
+            <div class="ui bottom fixed borderless menu footer">
+                @if(config('rguard.https'))
+                    <div class="item">
+                        <div class="ui green label">
+                            <i class="lock icon"></i>
+                            SECURE
+                        </div>
+                    </div>
+                @endif
+                <div class="item">
+                    <a class="ui {{ config('rguard.color') }} link label" href="https://github.com/thosakwe/rguard">
+                        Built with rGuard
+                    </a>
                 </div>
             </div>
-        @endif
-        <div class="header item">
-            &copy; {{ config('rguard.title', 'rGuard') }} {{ date('Y') }}
         </div>
-        <div class="right menu">
-            <div class="item">
-                <i class="stripe icon"></i>
-            </div>
-            <div class="item">
-                <i class="paypal card icon"></i>
-            </div>
-            @if(config('rguard.accept_bitcoin'))
-                <div class="item">
-                    <i class="bitcoin icon"></i>
+        <div class="tablet computer only row">
+            <div class="ui bottom fixed borderless menu footer">
+                @if(config('rguard.https'))
+                    <div class="item">
+                        <div class="ui green label">
+                            <i class="lock icon"></i>
+                            SECURE
+                        </div>
+                    </div>
+                @endif
+                <div class="header item">
+                    &copy; {{ config('rguard.title', 'rGuard') }} {{ date('Y') }}
                 </div>
-            @endif
-            @if(config('rguard.accept_alipay'))
-                <div class="item">
-                    <i class="yen icon"></i>
+                <div class="right menu">
+                    <div class="item">
+                        <i class="stripe icon"></i>
+                    </div>
+                    <div class="item">
+                        <i class="paypal card icon"></i>
+                    </div>
+                    @if(config('rguard.accept_bitcoin'))
+                        <div class="item">
+                            <i class="bitcoin icon"></i>
+                        </div>
+                    @endif
+                    @if(config('rguard.accept_alipay'))
+                        <div class="item">
+                            <i class="yen icon"></i>
+                        </div>
+                    @endif
+                    <div class="item">
+                        <a class="ui {{ config('rguard.color') }} link label" href="https://github.com/thosakwe/rguard">
+                            Built with rGuard
+                        </a>
+                    </div>
                 </div>
-            @endif
-            <div class="item">
-                <a class="ui {{ config('rguard.color') }} link label" href="https://github.com/regiostech/rguard">
-                    Built with rGuard
-                </a>
             </div>
         </div>
     </div>

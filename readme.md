@@ -1,4 +1,4 @@
-#rGuard
+# rGuard
 
 rGuard is a PHP package allowing you to set up a self-hosted licensing
 system. It comes complete with eCommerce support, as well as a
@@ -6,7 +6,7 @@ complete admin panel. It also lets you create custom pages, and even
 incorporate a blog. It's the complete software you need to sell
 **your** software.
 
-#Installation with Homestead
+# Installation with Homestead
 
 Prerequisites:
 
@@ -20,14 +20,15 @@ Prerequisites:
 4. php artisan key:generate
 5. php artisan vendor:publish
 6. Configure .env (ENABLE_HTTPS, DATABASE_*, MAIL_*)
-7. php artisan cashier:table
+7. php artisan cashier:table users
 8. php artisan migrate
 9. php artisan admin:install
 10. Create an admin user as described [here](http://sleeping-owl.github.io/en/Commands/Administrators.html). Default is admin / SleepingOwl.
 11. bower install
-12. Configure WordPress if using blog - Navigate to yoursite.com/blog
+12. * * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
+13. Configure WordPress if using blog - Navigate to yoursite.com/blog
 
-#Todo
+# Todo
 1. Your mom
 2. My licenses
 3. license panel

@@ -4,6 +4,7 @@ namespace rGuard;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Mail\Message;
 use rGuard\Traits\AngularDateTrait;
 use SleepingOwl\Models\SleepingOwlModel;
 
@@ -66,5 +67,32 @@ class License extends SleepingOwlModel
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function notifyOfPurchase() {
+        \Mail::send('emails.purchase', ['license' => $this], function (Message $message) {
+            $message
+                ->from('no-reply@' . $_SERVER['SERVER_NAME'], config('rguard.title'))
+                ->to($this->user->email)
+                ->subject('Purchase Success');
+        });
+    }
+
+    public function warnOfImminentExpiration() {
+        \Mail::send('emails.expiring', ['license' => $this], function (Message $message) {
+            $message
+                ->from('no-reply@' . $_SERVER['SERVER_NAME'], config('rguard.title'))
+                ->to($this->user->email)
+                ->subject('License Expiring Soon');
+        });
+    }
+
+    public function notifyOfExpiration() {
+        \Mail::send('emails.expired', ['license' => $this], function (Message $message) {
+            $message
+                ->from('no-reply@' . $_SERVER['SERVER_NAME'], config('rguard.title'))
+                ->to($this->user->email)
+                ->subject('License Expiring Soon');
+        });
     }
 }

@@ -1,6 +1,7 @@
 <?php
 $url = route('confirm', ['confirmation_code' => $user->confirmation_code]);
 ?>
+<!DOCTYPE html>
 <html>
 <body>
 <h1>Welcome to {{ ucwords(config('rguard.title', 'our site')) }}!</h1>

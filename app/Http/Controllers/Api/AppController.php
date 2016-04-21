@@ -4,6 +4,7 @@ namespace rGuard\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 
+use rGuard\App;
 use rGuard\Http\Requests;
 use rGuard\Http\Controllers\Controller;
 
@@ -43,12 +44,13 @@ class AppController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param App $app
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function show($id)
+    public function show(App $app)
     {
-        //
+        return $app;
     }
 
     /**

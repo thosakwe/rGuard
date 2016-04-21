@@ -79,6 +79,8 @@ Route::group(['prefix' => 'api'], function () {
 
 Route::group(['namespace' => 'Api', 'prefix' => 'api'], function() {
     Route::resource('user', 'UserController');
+    Route::resource('app', 'AppController');
     Route::resource('license', 'LicenseController');
+    Route::get('license/{license}/download/{virtual_path}', 'LicenseController@downloadFile')->where('virtual_path', '.+');
     Route::get('license/{license}/download', 'LicenseController@getDownload');
 });

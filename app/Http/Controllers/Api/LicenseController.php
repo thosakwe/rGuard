@@ -5,6 +5,7 @@ namespace rGuard\Http\Controllers\Api;
 use Illuminate\Http\Request;
 
 use rGuard\App;
+use rGuard\Download;
 use rGuard\Http\Requests;
 use rGuard\Http\Controllers\Controller;
 use rGuard\License;
@@ -14,12 +15,31 @@ class LicenseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', [
-            'only' => 'getDownload'
-        ]);
-        $this->middleware('license.owner', [
-            'only' => 'getDownload'
-        ]);
+        $this->middleware('auth.basic.once');
+        $this->middleware('license.owner');
+    }
+
+    public function downloadFile(License $license, $virtual_path) {
+        $download = Download::whereVirtualPath($virtual_path)->first();
+
+        if (!$download) {
+            return \Response::make('<h1>404 Not Found</h1>', 404);
+        }
+
+        if ($license->app_id !== $download->app_id) {
+            return \Response::make('<h1>403 Forbidden</h1>', 403);
+        }
+
+        $path = $download->file->getFullPath();
+        if (empty($path)) {
+            return \Response::json([
+                'error' => 'failure',
+                'message' => 'There is no downloadable file associated with this license. Contact the webmaster for assistance.'
+            ], 500);
+        }
+        $download->downloads++;
+        $download->save();
+        return \Response::download($path, basename($virtual_path));
     }
 
     public function getDownload(License $license)
@@ -33,7 +53,7 @@ class LicenseController extends Controller
         }
         $license->downloads++;
         $license->save();
-        return \Response::download($path);
+        return \Response::download($path, $license->app->name);
     }
 
     /**
@@ -43,7 +63,7 @@ class LicenseController extends Controller
      */
     public function index()
     {
-        //
+        return \Auth::user()->licenses();
     }
 
     /**

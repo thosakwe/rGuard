@@ -22,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
             $user->sendConfirmationEmail();
         });
 
+        License::created(function(License $license) {
+            $license->notifyOfPurchase();
+        });
+
         License::updating(function(License $license) {
            $license->code = strtoupper($license->code); //Force uppercase
         });

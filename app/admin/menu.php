@@ -19,3 +19,4 @@ Admin::menu(\rGuard\User::class)->icon('fa-users');
 Admin::menu(\rGuard\License::class)->icon('fa-credit-card');
 Admin::menu(\rGuard\App::class)->icon('fa-laptop');
 Admin::menu(\rGuard\Page::class)->icon('fa-file');
+Admin::menu(\rGuard\Download::class)->icon('fa-download');

@@ -12,6 +12,11 @@ use rGuard\User;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth.basic.once');
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -13,10 +13,13 @@ use SleepingOwl\Models\Traits\ModelWithImageOrFileFieldsTrait;
 
 class App extends SleepingOwlModel implements ModelWithFileFieldsInterface, ModelWithImageFieldsInterface, ValidationModelInterface
 {
+
     protected $fillable = [
-        'id', 'image', 'name', 'tagline',
+        'id', 'image', 'name', 'tagline', 'file',
         'version', 'price', 'featured', 'description'
     ];
+
+    protected $hidden = ['file'];
 
     public static function getList()
     {
@@ -46,6 +49,11 @@ class App extends SleepingOwlModel implements ModelWithFileFieldsInterface, Mode
     public function hasImageField($field)
     {
         return $field == 'image';
+    }
+
+    public function hasFileField($field)
+    {
+        return $field == 'file';
     }
 
     /**
@@ -79,14 +87,5 @@ class App extends SleepingOwlModel implements ModelWithFileFieldsInterface, Mode
         return [
             'file' => 'products/'
         ];
-    }
-
-    /**
-     * @param $field
-     * @return bool
-     */
-    public function hasFileField($field)
-    {
-        return $field == 'file';
     }
 }
